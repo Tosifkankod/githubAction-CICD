@@ -2,18 +2,25 @@
   "compilerOptions": {
     "rootDir": ".",
     "outDir": "./dist",
-    "module": "commonjs",
+
     "target": "es2020",
+
+    "module": "commonjs",
+    "moduleResolution": "node",
+
+    "ignoreDeprecations": "6.0",
+
     "types": [
       "node",
       "jest"
     ],
+
     "sourceMap": true,
     "strict": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
     "skipLibCheck": true
   },
+
   "include": [
     "src",
     "tests"
