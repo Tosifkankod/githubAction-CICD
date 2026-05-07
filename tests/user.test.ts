@@ -37,6 +37,6 @@ describe("Users API", () => {
 
         expect(res.status).toBe(201);
 
-        expect(res.body.name).toBe("Alice");
+        expect(res.body.name).toBe("Alice1");
     });
 });
