@@ -18,7 +18,6 @@ jobs:
         run: npm run test
   deploy:
     needs: test
-    if: always()
     runs-on: ubuntu-latest
     steps:
       - name: "Get clone"
@@ -29,7 +28,7 @@ jobs:
           node-version: "24"
       - name: Install Dependencies
         run: npm ci
-      - name: Build Project 
+      - name: Build Project
         run: npm run build
       - name: Deploy
         run: |
