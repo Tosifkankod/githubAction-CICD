@@ -1,12 +1,18 @@
 name: deployDist
 on: [ push, workflow_dispatch ]
 jobs:
-    test:
-        runs-on: ubuntu-latest
-        steps:
-            - name: "Get clone"
-              run: |
-                  echo "cloning repo"
-                  echo "${{toJson(github)}}"
-                  git clone https://github.com/${{github.repository}}.git
-
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Get clone"
+        uses: actions/checkout@v6
+      - name: "Install Nodejs 24"
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+      - name: "print the version"
+        run: node -v
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Tests
+        run: npm run test
