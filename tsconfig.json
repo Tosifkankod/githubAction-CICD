@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
+    "rootDir": "src",
     "outDir": "./dist",
 
     "target": "es2020",
 
-    "module": "commonjs",
+    "module": "ESNext",
     "moduleResolution": "node",
 
     "ignoreDeprecations": "6.0",
@@ -22,7 +22,7 @@
   },
 
   "include": [
-    "src",
-    "tests"
-  ]
+    "src/**/*"
+  ],
+  "exclude": ["node_modules", "dist", "tests"]
 }
